@@ -1,2 +1,2 @@
 # MATKARTO
-Homeworks in Python
+Úkoly z Matematické kartografie přepsané z MATLAB do Pythonu
