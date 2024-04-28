@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bab0e480ca0931df8a690fc744d667ee {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>$( function() {
+        $( ".maplegend" ).draggable({
+            start: function (event, ui) {
+                $(this).css({
+                    right: "auto",
+                    top: "auto",
+                    bottom: "auto"
+                });
+            }
+        });
+    });
+    </script>
+    <style type='text/css'>
+      .maplegend {
+        position: absolute;
+        z-index:9999;
+        background-color: rgba(255, 255, 255, .8);
+        border-radius: 5px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        padding: 10px;
+        font: 12px/14px Arial, Helvetica, sans-serif;
+        right: 10px;
+        bottom: 20px;
+      }
+      .maplegend .legend-title {
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+        }
+      .maplegend .legend-scale ul {
+        margin: 0;
+        margin-bottom: 0px;
+        padding: 0;
+        float: left;
+        list-style: none;
+        }
+      .maplegend .legend-scale ul li {
+        list-style: none;
+        margin-left: 0;
+        line-height: 16px;
+        margin-bottom: 2px;
+        }
+      .maplegend ul.legend-labels li span {
+        display: block;
+        float: left;
+        height: 14px;
+        width: 14px;
+        margin-right: 5px;
+        margin-left: 0;
+        border: 0px solid #ccc;
+        }
+      .maplegend .legend-source {
+        color: #777;
+        clear: both;
+        }
+      .maplegend a {
+        color: #777;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    
+    <div id='maplegend type' class='maplegend'>
+        <div class='legend-title'>type</div>
+        <div class='legend-scale'>
+            <ul class='legend-labels'>
+                <li><span style='background:#ff0000'></span>Bessel</li>
+                <li><span style='background:#0000ff'></span>Sphere</li>
+                <li><span style='background:#008000'></span>WGS-84</li>
+            </ul>
+        </div>
+    </div>
+    
+    
+            <div class="folium-map" id="map_bab0e480ca0931df8a690fc744d667ee" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_bab0e480ca0931df8a690fc744d667ee = L.map(
+                "map_bab0e480ca0931df8a690fc744d667ee",
+                {
+                    center: [50.09797220830271, 14.439735830836664],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_bab0e480ca0931df8a690fc744d667ee);
+
+            
+
+        
+    
+            var tile_layer_8b113453b236ed72d9cb2396a134c6ca = L.tileLayer(
+                "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_bab0e480ca0931df8a690fc744d667ee);
+        
+    
+            map_bab0e480ca0931df8a690fc744d667ee.fitBounds(
+                [[50.077258482386185, 14.428536814731322], [50.118685934219236, 14.450934846942005]],
+                {}
+            );
+        
+    
+        function geo_json_dc1db16f7596f42e7549600fce962199_styler(feature) {
+            switch(feature.id) {
+                case "0": case "1": 
+                    return {"color": "#008000", "fillColor": "#008000", "fillOpacity": 0.5, "weight": 2};
+                case "4": case "5": 
+                    return {"color": "#0000ff", "fillColor": "#0000ff", "fillOpacity": 0.5, "weight": 2};
+                default:
+                    return {"color": "#ff0000", "fillColor": "#ff0000", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_dc1db16f7596f42e7549600fce962199_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_dc1db16f7596f42e7549600fce962199_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_dc1db16f7596f42e7549600fce962199_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_dc1db16f7596f42e7549600fce962199_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_dc1db16f7596f42e7549600fce962199.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_dc1db16f7596f42e7549600fce962199_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_dc1db16f7596f42e7549600fce962199 = L.geoJson(null, {
+                onEachFeature: geo_json_dc1db16f7596f42e7549600fce962199_onEachFeature,
+            
+                style: geo_json_dc1db16f7596f42e7549600fce962199_styler,
+                pointToLayer: geo_json_dc1db16f7596f42e7549600fce962199_pointToLayer
+        });
+
+        function geo_json_dc1db16f7596f42e7549600fce962199_add (data) {
+            geo_json_dc1db16f7596f42e7549600fce962199
+                .addData(data)
+                .addTo(map_bab0e480ca0931df8a690fc744d667ee);
+        }
+            geo_json_dc1db16f7596f42e7549600fce962199_add({"bbox": [14.428536814731322, 50.077258482386185, 14.450934846942005, 50.118685934219236], "features": [{"bbox": [14.448810608930685, 50.078037741668695, 14.448810608930685, 50.078037741668695], "geometry": {"coordinates": [14.448810608930685, 50.078037741668695], "type": "Point"}, "id": "0", "properties": {"__folium_color": "#008000", "point": "P1", "type": "WGS-84"}, "type": "Feature"}, {"bbox": [14.450934846942005, 50.07858498016605, 14.450934846942005, 50.07858498016605], "geometry": {"coordinates": [14.450934846942005, 50.07858498016605], "type": "Point"}, "id": "1", "properties": {"__folium_color": "#008000", "point": "P2", "type": "WGS-84"}, "type": "Feature"}, {"bbox": [14.44771475580992, 50.077258482386185, 14.44771475580992, 50.077258482386185], "geometry": {"coordinates": [14.44771475580992, 50.077258482386185], "type": "Point"}, "id": "2", "properties": {"__folium_color": "#ff0000", "point": "P1", "type": "Bessel"}, "type": "Feature"}, {"bbox": [14.449838651198396, 50.077805805648836, 14.449838651198396, 50.077805805648836], "geometry": {"coordinates": [14.449838651198396, 50.077805805648836], "type": "Point"}, "id": "3", "properties": {"__folium_color": "#ff0000", "point": "P2", "type": "Bessel"}, "type": "Feature"}, {"bbox": [14.428536814731322, 50.118137888333194, 14.428536814731322, 50.118137888333194], "geometry": {"coordinates": [14.428536814731322, 50.118137888333194], "type": "Point"}, "id": "4", "properties": {"__folium_color": "#0000ff", "point": "P1", "type": "Sphere"}, "type": "Feature"}, {"bbox": [14.430659393425556, 50.118685934219236, 14.430659393425556, 50.118685934219236], "geometry": {"coordinates": [14.430659393425556, 50.118685934219236], "type": "Point"}, "id": "5", "properties": {"__folium_color": "#0000ff", "point": "P2", "type": "Sphere"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_dc1db16f7596f42e7549600fce962199.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["point"];
+    let aliases = ["point"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+</script>
+</html>
