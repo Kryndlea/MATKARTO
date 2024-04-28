@@ -1,0 +1,5 @@
+Method,Distances,Difference in distance
+WGS-84 and JTSK,163.77,-
+WGS-84 and Bessel,163.75,-0.02
+WGS-84 and Sphere,163.57,-0.19
+WGS-84 and ÈÚZK,234.07,70.3
